@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>我的第一篇blog</title>
+    <link href="/2023/03/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87blog/"/>
+    <url>/2023/03/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87blog/</url>
+    
+    <content type="html"><![CDATA[<h1 id="你好"><a href="#你好" class="headerlink" title="你好"></a>你好</h1><p><img src="1.jpg" alt="图片引用方法二"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>测试</title>
     <link href="/2023/03/03/%E6%B5%8B%E8%AF%95/"/>
     <url>/2023/03/03/%E6%B5%8B%E8%AF%95/</url>
