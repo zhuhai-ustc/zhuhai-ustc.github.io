@@ -16,21 +16,21 @@
   <meta name="author" content="ZHUHAI">
   <meta name="keywords" content="">
   
-    <meta name="description" content="ZHUHAI blog">
+    <meta name="description" content="下面代码实现torch多卡同时训练123456789import pytorch as torchfrom torch.utils.data.distributed import DistributedSampletorch.distributed.init_process_group(backend&#x3D;&amp;#x27;nccl&amp;#x27;)#初始化并行训练n_gpu &#x3D; torch.cuda.devi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试">
-<meta property="og:url" content="http://example.com/2023/03/03/%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:title" content="PyTorch并行训练">
+<meta property="og:url" content="http://example.com/2023/03/03/PyTorch%E5%B9%B6%E8%A1%8C%E8%AE%AD%E7%BB%83/index.html">
 <meta property="og:site_name" content="ZHUHAI">
-<meta property="og:description" content="ZHUHAI blog">
+<meta property="og:description" content="下面代码实现torch多卡同时训练123456789import pytorch as torchfrom torch.utils.data.distributed import DistributedSampletorch.distributed.init_process_group(backend&#x3D;&amp;#x27;nccl&amp;#x27;)#初始化并行训练n_gpu &#x3D; torch.cuda.devi">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-03T03:59:22.000Z">
-<meta property="article:modified_time" content="2023-03-03T03:59:22.079Z">
+<meta property="article:published_time" content="2023-03-03T07:51:38.000Z">
+<meta property="article:modified_time" content="2023-03-03T07:53:54.813Z">
 <meta property="article:author" content="ZHUHAI">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>测试 - ZHUHAI</title>
+  <title>PyTorch并行训练 - ZHUHAI</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +213,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="测试"></span>
+            <span id="subtitle" data-typed-text="PyTorch并行训练"></span>
           
         </div>
 
@@ -224,8 +224,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-03 11:59" pubdate>
-          2023年3月3日 中午
+        <time datetime="2023-03-03 15:51" pubdate>
+          2023年3月3日 下午
         </time>
       </span>
     
@@ -236,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          350 字
         
       </span>
     
@@ -247,7 +247,7 @@
         
         
         
-          1 分钟
+          3 分钟
         
       </span>
     
@@ -293,12 +293,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">测试</h1>
+            <h1 style="display: none">PyTorch并行训练</h1>
             
             
               <div class="markdown-body">
                 
-                
+                <h2 id="下面代码实现torch多卡同时训练"><a href="#下面代码实现torch多卡同时训练" class="headerlink" title="下面代码实现torch多卡同时训练"></a>下面代码实现torch多卡同时训练</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pytorch <span class="hljs-keyword">as</span> torch<br><span class="hljs-keyword">from</span> torch.utils.data.distributed <span class="hljs-keyword">import</span> DistributedSample<br>torch.distributed.init_process_group(backend=<span class="hljs-string">&#x27;nccl&#x27;</span>)<span class="hljs-comment">#初始化并行训练</span><br>n_gpu = torch.cuda.device_count()<span class="hljs-comment">#统计gpu数量</span><br>model = torch.nn.DataParallel(model)<span class="hljs-comment">#多卡部署模型</span><br>data  = TensorDataset(data)<br>data = DistributedSample(data)<span class="hljs-comment">#分布训练</span><br>loss = model(data)<br>loss = loss.mean()<span class="hljs-comment">#多卡取平均loss</span><br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -315,8 +315,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>测试</div>
-      <div>http://example.com/2023/03/03/测试/</div>
+      <div>PyTorch并行训练</div>
+      <div>http://example.com/2023/03/03/PyTorch并行训练/</div>
     </div>
     <div class="license-meta">
       
@@ -360,21 +360,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87blog/" title="我的第一篇blog">
+                      <a href="/2023/03/03/TextCNN/" title="TextCNN">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">我的第一篇blog</span>
+                        <span class="hidden-mobile">TextCNN</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2023/03/03/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
