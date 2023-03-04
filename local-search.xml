@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>PyTorch教程</title>
+    <link href="/2023/03/04/PyTorch%E6%95%99%E7%A8%8B/"/>
+    <url>/2023/03/04/PyTorch%E6%95%99%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<h1 id="推荐一些比较实用的torch教程"><a href="#推荐一些比较实用的torch教程" class="headerlink" title="推荐一些比较实用的torch教程"></a>推荐一些比较实用的torch教程</h1><ul><li>深入浅出PyTorch <a href="https://github.com/datawhalechina/thorough-pytorch">链接</a></li><li>Pytorch模型训练实用教程 <a href="https://github.com/TingsongYu/PyTorch_Tutorial">链接</a></li><li>包含各个深度学习任务的torch教程 <a href="https://github.com/fendouai/PyTorchDocs">链接</a></li><li>小土堆的教程 <a href="https://github.com/xiaotudui/pytorch-tutorial">链接</a></li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>TextCNN</title>
     <link href="/2023/03/03/TextCNN/"/>
     <url>/2023/03/03/TextCNN/</url>
