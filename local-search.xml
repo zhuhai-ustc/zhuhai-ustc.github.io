@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>常见损失函数总结</title>
+    <link href="/2023/03/04/%E5%B8%B8%E8%A7%81%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93/"/>
+    <url>/2023/03/04/%E5%B8%B8%E8%A7%81%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="二分类交叉熵损失函数BCELoss"><a href="#二分类交叉熵损失函数BCELoss" class="headerlink" title="二分类交叉熵损失函数BCELoss"></a>二分类交叉熵损失函数BCELoss</h1><h1 id="交叉熵损失函数CrossEntropyLoss"><a href="#交叉熵损失函数CrossEntropyLoss" class="headerlink" title="交叉熵损失函数CrossEntropyLoss"></a>交叉熵损失函数CrossEntropyLoss</h1><h1 id="L1损失函数L1Loss"><a href="#L1损失函数L1Loss" class="headerlink" title="L1损失函数L1Loss"></a>L1损失函数L1Loss</h1><p>也称为Mean Absolute Error，即平均绝对误差(MAE),它衡量的是预测值与真实值之间距离的平均误差幅度，作用范围为0到正无穷。</p><ul><li>优点：无论对于什么样的输入值，都有着稳定的梯度，不会导致梯度爆炸问题，具有较为稳健性的解</li><li>缺点：在中心点是折点，不能求导，梯度下降时要是恰好学习到w=0就没法接着进行了</li></ul><p>$$<br>loss(x,y) = \frac{1}{n}\sum_{i=1}^{n}|x_i-y_i|<br>$$</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br>x = torch.randn(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,requires_grad = <span class="hljs-literal">True</span>)<br>y = torch.randn(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>)<br>loss = nn.L1Loss()<br>output = loss(x,y)<br><span class="hljs-built_in">print</span>(output) <span class="hljs-comment">#1.024</span><br><br>output_ = torch.mean(torch.<span class="hljs-built_in">abs</span>(x-y)) <span class="hljs-comment"># 1.024</span><br></code></pre></td></tr></table></figure><p>下面是L1Loss的梯度图：<br><video id="video" controls="" preload="l1loss.mp4" poster="封面"><br>      <source id="mp4" src="l1loss.mp4" type="video/mp4"><br></videos></p><h1 id="L2损失函数-MSE损失函数MSELoss"><a href="#L2损失函数-MSE损失函数MSELoss" class="headerlink" title="L2损失函数/MSE损失函数MSELoss"></a>L2损失函数/MSE损失函数MSELoss</h1><h1 id="平滑L1-Smooth-L1-损失函数SmoothL1Loss"><a href="#平滑L1-Smooth-L1-损失函数SmoothL1Loss" class="headerlink" title="平滑L1 (Smooth L1)损失函数SmoothL1Loss"></a>平滑L1 (Smooth L1)损失函数SmoothL1Loss</h1><h1 id="KL散度KLDivLoss"><a href="#KL散度KLDivLoss" class="headerlink" title="KL散度KLDivLoss"></a>KL散度KLDivLoss</h1><h1 id="余弦相似度CosineEmbeddingLoss"><a href="#余弦相似度CosineEmbeddingLoss" class="headerlink" title="余弦相似度CosineEmbeddingLoss"></a>余弦相似度CosineEmbeddingLoss</h1><video id="video" controls="" preload="none" poster="封面">      <source id="mp4" src="SquareToCircle.mp4" type="video/mp4"></videos>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>PyTorch教程</title>
     <link href="/2023/03/04/PyTorch%E6%95%99%E7%A8%8B/"/>
     <url>/2023/03/04/PyTorch%E6%95%99%E7%A8%8B/</url>

@@ -16,21 +16,21 @@
   <meta name="author" content="ZHUHAI">
   <meta name="keywords" content="">
   
-    <meta name="description" content="推荐一些比较实用的torch教程 深入浅出PyTorch 链接 Pytorch模型训练实用教程 链接 包含各个深度学习任务的torch教程 链接 小土堆的教程 链接">
+    <meta name="description" content="二分类交叉熵损失函数BCELoss交叉熵损失函数CrossEntropyLossL1损失函数L1Loss也称为Mean Absolute Error，即平均绝对误差(MAE),它衡量的是预测值与真实值之间距离的平均误差幅度，作用范围为0到正无穷。  优点：无论对于什么样的输入值，都有着稳定的梯度，不会导致梯度爆炸问题，具有较为稳健性的解 缺点：在中心点是折点，不能求导，梯度下降时要是恰好学习到w&#x3D;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PyTorch教程">
-<meta property="og:url" content="http://example.com/2023/03/04/PyTorch%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:title" content="常见损失函数总结">
+<meta property="og:url" content="http://example.com/2023/03/04/%E5%B8%B8%E8%A7%81%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="ZHUHAI">
-<meta property="og:description" content="推荐一些比较实用的torch教程 深入浅出PyTorch 链接 Pytorch模型训练实用教程 链接 包含各个深度学习任务的torch教程 链接 小土堆的教程 链接">
+<meta property="og:description" content="二分类交叉熵损失函数BCELoss交叉熵损失函数CrossEntropyLossL1损失函数L1Loss也称为Mean Absolute Error，即平均绝对误差(MAE),它衡量的是预测值与真实值之间距离的平均误差幅度，作用范围为0到正无穷。  优点：无论对于什么样的输入值，都有着稳定的梯度，不会导致梯度爆炸问题，具有较为稳健性的解 缺点：在中心点是折点，不能求导，梯度下降时要是恰好学习到w&#x3D;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-04T05:21:37.000Z">
-<meta property="article:modified_time" content="2023-03-04T05:32:03.930Z">
+<meta property="article:published_time" content="2023-03-04T06:26:20.000Z">
+<meta property="article:modified_time" content="2023-03-04T08:48:55.402Z">
 <meta property="article:author" content="ZHUHAI">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>PyTorch教程 - ZHUHAI</title>
+  <title>常见损失函数总结 - ZHUHAI</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +213,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="PyTorch教程"></span>
+            <span id="subtitle" data-typed-text="常见损失函数总结"></span>
           
         </div>
 
@@ -224,7 +224,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-04 13:21" pubdate>
+        <time datetime="2023-03-04 14:26" pubdate>
           2023年3月4日 下午
         </time>
       </span>
@@ -236,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          74 字
+          538 字
         
       </span>
     
@@ -247,7 +247,7 @@
         
         
         
-          1 分钟
+          5 分钟
         
       </span>
     
@@ -293,17 +293,24 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">PyTorch教程</h1>
+            <h1 style="display: none">常见损失函数总结</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="推荐一些比较实用的torch教程"><a href="#推荐一些比较实用的torch教程" class="headerlink" title="推荐一些比较实用的torch教程"></a>推荐一些比较实用的torch教程</h1><ul>
-<li>深入浅出PyTorch <a target="_blank" rel="noopener" href="https://github.com/datawhalechina/thorough-pytorch">链接</a></li>
-<li>Pytorch模型训练实用教程 <a target="_blank" rel="noopener" href="https://github.com/TingsongYu/PyTorch_Tutorial">链接</a></li>
-<li>包含各个深度学习任务的torch教程 <a target="_blank" rel="noopener" href="https://github.com/fendouai/PyTorchDocs">链接</a></li>
-<li>小土堆的教程 <a target="_blank" rel="noopener" href="https://github.com/xiaotudui/pytorch-tutorial">链接</a></li>
+                <h1 id="二分类交叉熵损失函数BCELoss"><a href="#二分类交叉熵损失函数BCELoss" class="headerlink" title="二分类交叉熵损失函数BCELoss"></a>二分类交叉熵损失函数BCELoss</h1><h1 id="交叉熵损失函数CrossEntropyLoss"><a href="#交叉熵损失函数CrossEntropyLoss" class="headerlink" title="交叉熵损失函数CrossEntropyLoss"></a>交叉熵损失函数CrossEntropyLoss</h1><h1 id="L1损失函数L1Loss"><a href="#L1损失函数L1Loss" class="headerlink" title="L1损失函数L1Loss"></a>L1损失函数L1Loss</h1><p>也称为Mean Absolute Error，即平均绝对误差(MAE),它衡量的是预测值与真实值之间距离的平均误差幅度，作用范围为0到正无穷。</p>
+<ul>
+<li>优点：无论对于什么样的输入值，都有着稳定的梯度，不会导致梯度爆炸问题，具有较为稳健性的解</li>
+<li>缺点：在中心点是折点，不能求导，梯度下降时要是恰好学习到w=0就没法接着进行了</li>
 </ul>
+<p>$$<br>loss(x,y) = \frac{1}{n}\sum_{i=1}^{n}|x_i-y_i|<br>$$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br>x = torch.randn(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,requires_grad = <span class="hljs-literal">True</span>)<br>y = torch.randn(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>)<br>loss = nn.L1Loss()<br>output = loss(x,y)<br><span class="hljs-built_in">print</span>(output) <span class="hljs-comment">#1.024</span><br><br>output_ = torch.mean(torch.<span class="hljs-built_in">abs</span>(x-y)) <span class="hljs-comment"># 1.024</span><br></code></pre></td></tr></table></figure>
+
+<p>下面是L1Loss的梯度图：<br><video id="video" controls="" preload="l1loss.mp4" poster="封面"><br>      <source id="mp4" src="l1loss.mp4" type="video/mp4"><br></videos></p>
+<h1 id="L2损失函数-MSE损失函数MSELoss"><a href="#L2损失函数-MSE损失函数MSELoss" class="headerlink" title="L2损失函数/MSE损失函数MSELoss"></a>L2损失函数/MSE损失函数MSELoss</h1><h1 id="平滑L1-Smooth-L1-损失函数SmoothL1Loss"><a href="#平滑L1-Smooth-L1-损失函数SmoothL1Loss" class="headerlink" title="平滑L1 (Smooth L1)损失函数SmoothL1Loss"></a>平滑L1 (Smooth L1)损失函数SmoothL1Loss</h1><h1 id="KL散度KLDivLoss"><a href="#KL散度KLDivLoss" class="headerlink" title="KL散度KLDivLoss"></a>KL散度KLDivLoss</h1><h1 id="余弦相似度CosineEmbeddingLoss"><a href="#余弦相似度CosineEmbeddingLoss" class="headerlink" title="余弦相似度CosineEmbeddingLoss"></a>余弦相似度CosineEmbeddingLoss</h1><video id="video" controls="" preload="none" poster="封面">
+      <source id="mp4" src="SquareToCircle.mp4" type="video/mp4">
+</videos>
+
 
                 
               </div>
@@ -321,8 +328,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>PyTorch教程</div>
-      <div>http://example.com/2023/03/04/PyTorch教程/</div>
+      <div>常见损失函数总结</div>
+      <div>http://example.com/2023/03/04/常见损失函数总结/</div>
     </div>
     <div class="license-meta">
       
@@ -366,18 +373,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/04/%E5%B8%B8%E8%A7%81%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93/" title="常见损失函数总结">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">常见损失函数总结</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/03/TextCNN/" title="TextCNN">
-                        <span class="hidden-mobile">TextCNN</span>
+                      <a href="/2023/03/04/PyTorch%E6%95%99%E7%A8%8B/" title="PyTorch教程">
+                        <span class="hidden-mobile">PyTorch教程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
