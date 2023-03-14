@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://example.com/2023/03/09/BERT-embedding%E5%B1%82%E8%AF%A6%E8%A7%A3/embedding.png">
 <meta property="og:image" content="http://example.com/2023/03/09/BERT-embedding%E5%B1%82%E8%AF%A6%E8%A7%A3/bpe.png">
 <meta property="article:published_time" content="2023-03-09T08:41:26.000Z">
-<meta property="article:modified_time" content="2023-03-10T07:48:12.816Z">
+<meta property="article:modified_time" content="2023-03-14T07:13:38.088Z">
 <meta property="article:author" content="ZHUHAI">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/2023/03/09/BERT-embedding%E5%B1%82%E8%AF%A6%E8%A7%A3/embedding.png">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.3k 字
+          8.9k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          70 分钟
+          75 分钟
         
       </span>
     
@@ -324,6 +324,10 @@
 <h2 id="AdamW"><a href="#AdamW" class="headerlink" title="AdamW"></a>AdamW</h2><p>具体见优化器blog</p>
 <h2 id="wordpiece"><a href="#wordpiece" class="headerlink" title="wordpiece"></a>wordpiece</h2><p>BPE（Byte-Pair Encoding）BPE的大概训练过程：按照从左到右的顺序，将一个词拆分成多个子词，每个子词尽可能长。 greedy longest-match-first algorithm，贪婪最长优先匹配算法。<br><img src="bpe.png" srcset="/img/loading.gif" lazyload alt="BPE"></p>
 <h2 id="SELU激活函数"><a href="#SELU激活函数" class="headerlink" title="SELU激活函数"></a>SELU激活函数</h2><p>内部归一化的速度比外部归一化快，这意味着网络能更快收敛；<br>不可能出现梯度消失或爆炸问题，见 SELU 论文附录的定理 2 和 3。<br>$$<br>SELU(x) = \lambda x \quad if \quad  x&gt;0<br>$$<br>$$<br>SELU(x) = \lambda (\alpha e^x-\alpha) \quad if \quad  x&lt;=0<br>$$</p>
+<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><h3 id="Warm-up"><a href="#Warm-up" class="headerlink" title="Warm up"></a>Warm up</h3><p>在训练初期使用较小的学习率（从 0 开始），在一定步数（比如 1000 步）内逐渐提高到正常大小（比如上面的 2e-5），避免模型过早进入局部最优而过拟合；在训练后期再慢慢将学习率降低到 0，避免后期训练还出现较大的参数变化。</p>
+<h3 id="标签平滑"><a href="#标签平滑" class="headerlink" title="标签平滑"></a>标签平滑</h3><p>和L1，L2，dropout一样的正则化方法，对one-hot标签向量平滑<br>$$<br>\hat y = y_{hot}(1-\alpha)+\alpha/K<br>$$<br>K是分类的个数；避免模型对于正确标签过于自信，使得预测正负样本的输出值差别不那么大，从而避免过拟合，提高模型的泛化能力。</p>
+<p>标签平滑可以让分类之间的cluster更加紧凑，增加类间距离，减少类内距离，提高泛化性，同时还能提高Model Calibration（模型对于预测值的confidences和accuracies之间aligned的程度）。但是在模型蒸馏中使用Label smoothing会导致性能下降。</p>
+<h3 id="gradient-checkpointing"><a href="#gradient-checkpointing" class="headerlink" title="gradient checkpointing"></a>gradient checkpointing</h3><p>用 gradient checkpointing 技术以降低训练时的显存占用。gradient checkpointing 即梯度检查点，通过减少保存的计算图节点压缩模型占用空间，但是在计算梯度的时候需要重新计算没有存储的值，参考论文《Training Deep Nets with Sublinear Memory Cost》</p>
 
                 
               </div>
@@ -385,6 +389,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/03/10/GPT-%E5%90%84%E5%B1%82%E8%AF%A6%E8%A7%A3/" title="GPT 各层详解">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">GPT 各层详解</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
