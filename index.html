@@ -284,6 +284,8 @@
                       margin-top: 1.5em;
                       margin-bottom: 0.8em;
                       font-weight: 600;
+                      padding-bottom: 0.5em;
+                      border-bottom: 2px solid #e0e0e0;
                     }
                     .markdown-body h3 {
                       font-size: 1.2em;
@@ -298,6 +300,16 @@
                     .markdown-body ul li {
                       font-size: 0.95em;
                       line-height: 1.8;
+                    }
+                    .markdown-body h2:not(:first-of-type) {
+                      margin-top: 2.5em;
+                    }
+                    .about-avatar {
+                      opacity: 0;
+                      transition: opacity 0.8s ease-in-out;
+                    }
+                    .about-avatar.visible {
+                      opacity: 1;
                     }
                   </style>
                   <div class="markdown-body">
@@ -485,6 +497,21 @@
         typing(text);
       
     })(window, document);
+  </script>
+
+  <script>
+    // 滚动时显示头像
+    window.addEventListener('scroll', function() {
+      var avatar = document.querySelector('.about-avatar');
+      var scrollPosition = window.scrollY;
+      var triggerPosition = 300; // 滚动300px后显示头像
+      
+      if (scrollPosition > triggerPosition) {
+        avatar.classList.add('visible');
+      } else {
+        avatar.classList.remove('visible');
+      }
+    });
   </script>
 
 
