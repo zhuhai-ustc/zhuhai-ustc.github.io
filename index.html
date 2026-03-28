@@ -271,6 +271,13 @@
           
         </a>
       
+        
+        
+        
+        <button id="lang-toggle" class="lang-toggle" style="background: none; border: 1px solid #ddd; border-radius: 20px; padding: 5px 15px; cursor: pointer; font-size: 0.9em; transition: all 0.3s;">
+          EN
+        </button>
+      
     </div>
   </div>
 </div>
@@ -311,8 +318,13 @@
                     .about-avatar.visible {
                       opacity: 1;
                     }
+                    #resume-en {
+                      display: none;
+                    }
                   </style>
-                  <div class="markdown-body">
+                  
+                  <!-- 中文简历 -->
+                  <div id="resume-zh" class="markdown-body">
                     
                     <h2>工作经历</h2>
 
@@ -375,6 +387,69 @@
                     <h3><strong>杭州电子科技大学</strong> · 信息安全（本科） <span style="float: right; color: #666; font-weight: normal; font-size: 0.9em;">2017.09 - 2021.06</span></h3>
                     <ul>
                       <li>省优秀毕业生、省政府奖学金、大学生数模竞赛国家二等奖/深圳杯数模国二</li>
+                    </ul>
+                  </div>
+                  
+                  <!-- 英文简历 -->
+                  <div id="resume-en" class="markdown-body">
+                    
+                    <h2>Work Experience</h2>
+
+                    <h3><strong>AliExpress, Alibaba International</strong> · Recommendation Algorithm Engineer <span style="float: right; color: #666; font-weight: normal; font-size: 0.9em;">2024.07 - Present</span></h3>
+
+                    <ul>
+                      <li>Focus on product modeling in recommendation ranking models, specializing in logistics preference modeling, deeply involved in multi-price models, covering multiple core business scenarios, serving online users.</li>
+                      <li>Lead the retrieval and implementation of Semantic ID in ranking models, design and implement GateSID optimization scheme, improving exposure rate of new products in cold start.</li>
+                      <li>Participate in the design and implementation of generative ranking Transformer model (SORT), achieving <strong>+6.35%</strong> orders and <strong>+5.47%</strong> GMV improvement across all scenarios.</li>
+                    </ul>
+
+                    <h3><strong>Lazada, Alibaba International</strong> · Search Algorithm Engineer (Intern) <span style="float: right; color: #666; font-weight: normal; font-size: 0.9em;">2023.07 - 2024.07</span></h3>
+
+                    <ul>
+                      <li>Addressing the limitation of traditional search relevance calculation based only on text information, responsible for leveraging multimodal large models to improve search relevance, proposing Query-LIFE method.</li>
+                      <li>Implement query-aware image-text modal fusion, effectively combining image and title information to enhance product representation accuracy.</li>
+                      <li>Achieved <strong>3.06%</strong> UV order improvement and <strong>3.19%</strong> GMV improvement online, results published at COLING 2025.</li>
+                    </ul>
+
+                    <h2>Project Experience</h2>
+
+                    <h3><strong>Semantic ID Modeling (GateSID)</strong> <span style="float: right; color: #666; font-weight: normal; font-size: 0.9em;">2025.07 - 2026.01</span></h3>
+
+                    <ul>
+                      <li><strong>Background</strong>: In recommendation cold start scenarios, ranking models face the trade-off challenge between collaborative signals and linguistic signals. New products struggle to get sufficient exposure due to lack of collaborative information.</li>
+                      <li><strong>Task</strong>: Design a recommendation framework that dynamically balances linguistic information and collaborative signals based on product maturity to improve exposure efficiency.</li>
+                      <li><strong>Action</strong>: Propose GateSID framework, use VQ-VAE to discretize multimodal features into hierarchical language IDs, and build user language ID behavior sequences; design gating fusion mechanism to rely on linguistic information for cold start products and retain collaborative signals for popular products.</li>
+                      <li><strong>Result</strong>: GateSID outperforms SOTA baselines (COINS, SaviorRec) on all metrics, CTCVR AUC <strong>+0.4%</strong>, GMV <strong>+2.6%</strong>, orders <strong>+1.6%</strong>. Submitted to SIGIR 2026 and KDD 2026. <a href="https://arxiv.org/pdf/2603.22916">Paper</a></li>
+                    </ul>
+
+                    <h3><strong>Business-level Recommendation System Ranking Transformer Model (SORT)</strong> <span style="float: right; color: #666; font-weight: normal; font-size: 0.9em;">2025.07 - Present</span></h3>
+
+                    <ul>
+                      <li><strong>Background</strong>: Single-domain independent training leads to lack of user global intent modeling, and traditional ranking models show diminishing returns in scaling up.</li>
+                      <li><strong>Task</strong>: Design and deploy a generative architecture-based transformer ranking large model to break through traditional model ceilings.</li>
+                      <li><strong>Action</strong>: Implement request-level sample organization and local attention; improve transformer architecture by introducing special tokens, QKNorm, Attention Gate, and Sparse MoE modules; optimize training-inference system, collaborate with efficiency team to develop attention operators and operator fusion, improving MFU from 3% to 12%.</li>
+                      <li><strong>Result</strong>: Online 30k/B test shows orders <strong>+6.35%</strong>, GMV <strong>+5.47%</strong>; Service efficiency: latency reduced by <strong>44.67%</strong>, throughput increased by <strong>121.33%</strong>; Model performance: CTR-AUC improved by <strong>2.1pt</strong>, showing excellent scalability in data/model/sequence length dimensions. <a href="https://arxiv.org/pdf/2603.03988">Paper</a></li>
+                    </ul>
+
+                    <h3><strong>Search Relevance Multimodality (Query-LIFE)</strong> <span style="float: right; color: #666; font-weight: normal; font-size: 0.9em;">2023.07 - 2024.07</span></h3>
+
+                    <ul>
+                      <li><strong>Background</strong>: Traditional similarity calculation methods model only based on product titles and queries, unable to fully utilize image information, affecting search accuracy.</li>
+                      <li><strong>Task</strong>: Design multimodal similarity calculation method to improve search result accuracy and user experience.</li>
+                      <li><strong>Action</strong>: Propose Query-LIFE method, adopt query-based image-text modal fusion, effectively combine image and title information, and use query-aware modal pairs to enhance product representation accuracy.</li>
+                      <li><strong>Result</strong>: Online 30k/B test shows <strong>3.06%</strong> UV order improvement and <strong>3.19%</strong> GMV improvement, results published at <a href="https://aclanthology.org/2025.coling-industry.2.pdf">COLING 2025</a></li>
+                    </ul>
+
+                    <h2>Education</h2>
+
+                    <h3><strong>University of Science and Technology of China (USTC)</strong> · Computer Technology (Master) <span style="float: right; color: #666; font-weight: normal; font-size: 0.9em;">2021.09 - 2024.06</span></h3>
+                    <ul>
+                      <li>Provincial Outstanding Graduate, CAS President Scholarship, National Scholarship</li>
+                    </ul>
+
+                    <h3><strong>Hangzhou Dianzi University</strong> · Information Security (Bachelor) <span style="float: right; color: #666; font-weight: normal; font-size: 0.9em;">2017.09 - 2021.06</span></h3>
+                    <ul>
+                      <li>Provincial Outstanding Graduate, Provincial Government Scholarship, National Second Prize in Undergraduate Mathematical Modeling Competition/Shenzhen Cup National Second Prize</li>
                     </ul>
                   </div>
                 </article>
@@ -511,6 +586,30 @@
       } else {
         avatar.classList.remove('visible');
       }
+    });
+  </script>
+
+  <script>
+    // 中英文切换逻辑
+    document.addEventListener('DOMContentLoaded', function() {
+      var langToggle = document.getElementById('lang-toggle');
+      var resumeZh = document.getElementById('resume-zh');
+      var resumeEn = document.getElementById('resume-en');
+      var currentLang = 'zh';
+      
+      langToggle.addEventListener('click', function() {
+        if (currentLang === 'zh') {
+          resumeZh.style.display = 'none';
+          resumeEn.style.display = 'block';
+          langToggle.textContent = '中文';
+          currentLang = 'en';
+        } else {
+          resumeZh.style.display = 'block';
+          resumeEn.style.display = 'none';
+          langToggle.textContent = 'EN';
+          currentLang = 'zh';
+        }
+      });
     });
   </script>
 
