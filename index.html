@@ -284,8 +284,6 @@
                       margin-top: 1.5em;
                       margin-bottom: 0.8em;
                       font-weight: 600;
-                      padding-bottom: 0.5em;
-                      border-bottom: 2px solid #e0e0e0;
                     }
                     .markdown-body h3 {
                       font-size: 1.2em;
@@ -300,16 +298,6 @@
                     .markdown-body ul li {
                       font-size: 0.95em;
                       line-height: 1.8;
-                    }
-                    .markdown-body h2:not(:first-of-type) {
-                      margin-top: 2.5em;
-                    }
-                    .about-avatar {
-                      opacity: 0;
-                      transition: opacity 0.8s ease-in-out;
-                    }
-                    .about-avatar.visible {
-                      opacity: 1;
                     }
                   </style>
                   <div class="markdown-body">
@@ -340,7 +328,7 @@
                       <li><strong>背景</strong>：推荐冷启动场景中，排序模型面临协同信号与语言信号权衡难题，新商品因缺少协同信息难以获得足够曝光。</li>
                       <li><strong>任务</strong>：设计能根据商品成熟度动态平衡语言信息与协同信号的推荐框架，提升曝光效率。</li>
                       <li><strong>行动</strong>：提出GateSID框架，利用VQ-VAE将多模态特征离散化为分层语言ID，并构建用户语言ID行为序列；设计门控融合机制，对冷启动商品依据语言信息，对热门商品保留协同信号。</li>
-                      <li><strong>结果</strong>：GateSID在所有指标上均优于SOTA基线（COINS、SaviorRec），CTCVR AUC<strong>+0.4%</strong>、GMV<strong>+2.6%</strong>、订单量<strong>+1.6%</strong>，成果投稿SIGIR 2026。成果投稿KDD2026<a href="https://arxiv.org/pdf/2603.22916"></a></li>
+                      <li><strong>结果</strong>：GateSID在所有指标上均优于SOTA基线（COINS、SaviorRec），CTCVR AUC<strong>+0.4%</strong>、GMV<strong>+2.6%</strong>、订单量<strong>+1.6%</strong>，成果投稿SIGIR 2026。成果投稿<a href="https://arxiv.org/pdf/2603.22916">SIGIR2026</a></li>
                     </ul>
 
                     <h3><strong>业务级推荐系统排序Transformer模型（SORT）</strong> <span style="float: right; color: #666; font-weight: normal; font-size: 0.9em;">2025.07 - 至今</span></h3>
@@ -349,7 +337,7 @@
                       <li><strong>背景</strong>：单领域数据独立训练导致用户全域意图建模缺失，传统排序模型scaling up收益递减。</li>
                       <li><strong>任务</strong>：设计并落地基于生成式架构的transformer排序大模型，突破传统模型天花板。</li>
                       <li><strong>行动</strong>：实现请求级样本组织、局部注意力；改进transformer架构，引入特殊token、QKNorm、Attention Gate和Sparse MoE模块；优化训练-推理系统，联动工效团队开发注意力算子、算子融合，MFU从3%提升至12%。</li>
-                      <li><strong>结果</strong>：线上3万/B测试订单<strong>+6.35%</strong>、GMV<strong>+5.47%</strong>；服务效率提升：延迟降低<strong>44.67%</strong>，吞吐量<strong>+121.33%</strong>；模型性能：CTR-AUC提升<strong>2.1pt</strong>，在数据/模型/序列长度维度均展现优异扩展性。成果投稿KDD2026<a href="https://arxiv.org/pdf/2603.03988"></a></li>
+                      <li><strong>结果</strong>：线上3万/B测试订单<strong>+6.35%</strong>、GMV<strong>+5.47%</strong>；服务效率提升：延迟降低<strong>44.67%</strong>，吞吐量<strong>+121.33%</strong>；模型性能：CTR-AUC提升<strong>2.1pt</strong>，在数据/模型/序列长度维度均展现优异扩展性。<a href="https://arxiv.org/pdf/2603.03988">详见</a></li>
                     </ul>
 
                       
@@ -368,14 +356,8 @@
                     <h2>教育背景</h2>
 
                     <h3><strong>中国科学技术大学</strong> · 计算机技术（硕士） <span style="float: right; color: #666; font-weight: normal; font-size: 0.9em;">2021.09 - 2024.06</span></h3>
-                    <ul>
-                      <li>省优秀毕业生、中科院院长奖学金、国家奖学金</li>
-                    </ul>
 
                     <h3><strong>杭州电子科技大学</strong> · 信息安全（本科） <span style="float: right; color: #666; font-weight: normal; font-size: 0.9em;">2017.09 - 2021.06</span></h3>
-                    <ul>
-                      <li>省优秀毕业生、省政府奖学金、大学生数模竞赛国家二等奖/深圳杯数模国二</li>
-                    </ul>
                   </div>
                 </article>
 
@@ -497,21 +479,6 @@
         typing(text);
       
     })(window, document);
-  </script>
-
-  <script>
-    // 滚动时显示头像
-    window.addEventListener('scroll', function() {
-      var avatar = document.querySelector('.about-avatar');
-      var scrollPosition = window.scrollY;
-      var triggerPosition = 300; // 滚动300px后显示头像
-      
-      if (scrollPosition > triggerPosition) {
-        avatar.classList.add('visible');
-      } else {
-        avatar.classList.remove('visible');
-      }
-    });
   </script>
 
 
